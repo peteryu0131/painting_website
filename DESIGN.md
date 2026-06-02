@@ -72,17 +72,16 @@ Do not use:
 - Constant movement
 - Random animated components that do not support the company brand
 
-## React Bits Usage
+## Static Implementation Rules
 
-Use react-bits style selectively through local polished components:
+Use a simple static structure:
 
-- Premium buttons
-- Hover cards
-- Subtle animated text
-- Image reveal
-- Training tabs
+- `index.html`
+- `style.css`
+- `script.js`
+- `assets/`
 
-Do not add unrelated component effects. Every component must support clarity, trust, and conversion.
+Use small selected CSS effects only when they support the old-money artisan studio brand. Do not add component frameworks or build tooling.
 
 ## Page Structure
 
@@ -94,6 +93,7 @@ Do not add unrelated component effects. Every component must support clarity, tr
 6. Training Academy
 7. Why Choose Us
 8. Contact / booking form
+9. Footer
 
 ## Signature Process
 
@@ -101,7 +101,7 @@ This section is a core differentiator and must stay near the top of the homepage
 
 - It explains the premium service model: scan and measure the space, build a 3D model, preview colors and finishes, then quote and execute.
 - Use `Space Scanning` or `Room Scan & Measurement`.
-- Do not use `Laser Scanning`.
+- Avoid naming the scan as laser-based.
 - Keep the line: `A Smarter, More Refined Way to Transform Your Walls.`
 - The layout should feel like a refined brand process, not a generic service checklist.
 - Use one project placeholder image only until real company photography is ready.
@@ -118,7 +118,7 @@ This section is a core differentiator and must stay near the top of the homepage
   - Room Scan & Measurement
   - On-Site Assessment
   - Space Review
-- Do not use `Laser Scan`.
+- Avoid laser-specific scan wording.
 
 ## Responsive Rules
 

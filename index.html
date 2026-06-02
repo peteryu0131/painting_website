@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Premium painting, renovation, wall restoration, and painter training supported by space scanning, 3D modeling, and finish preview."
+    />
+    <title>Northline Finish Co. | Painting, Renovation, Painter Training</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      defer
+    ></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header" id="home">
+      <nav class="nav-shell" aria-label="Primary navigation">
+        <a class="brand" href="#home" aria-label="Northline Finish Co. home">
+          <span class="brand-mark">NF</span>
+          <span>
+            <span class="brand-name">Northline Finish Co.</span>
+            <span class="brand-subtitle">Painting Studio & Academy</span>
+          </span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="site-nav" data-nav>
+          <a href="#home">Home</a>
+          <a href="#painting">Painting</a>
+          <a href="#renovation">Renovation</a>
+          <a href="#training">Training</a>
+          <a href="#process">Process</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <a class="nav-cta" href="#contact">Book a Site Visit</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero section-dark" aria-labelledby="hero-title">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow hero-reveal">
+              Premium Painting · Renovation · 3D Finish Preview
+            </p>
+            <h1 class="hero-title hero-reveal" id="hero-title">
+              Refined Walls, Planned Before We Paint
+            </h1>
+            <p class="hero-text hero-reveal">We provide premium wall painting, renovation, and hands-on painter training, supported by space scanning, 3D modeling, and finish visualization before work begins.</p>
+            <div class="hero-actions hero-reveal">
+              <a class="button button-primary" href="#contact">Book a Site Visit</a>
+              <a class="button button-secondary" href="#process">Explore Our Process</a>
+            </div>
+            <div class="hero-proof hero-reveal" aria-label="Key services">
+              <span>On-site assessment</span>
+              <span>3D planning</span>
+              <span>Finish preview</span>
+              <span>Painter training</span>
+            </div>
+          </div>
+
+          <div class="hero-visual hero-reveal">
+            <div class="image-frame hero-image-wrap">
+              <img
+                src="assets/hero-olive-interior.png"
+                alt="Premium interior wall finish in a refined olive and cream room"
+              />
+            </div>
+            <div class="floating-process" aria-label="Premium process highlights">
+              <span><strong>01</strong> Space Scanning</span>
+              <span><strong>02</strong> 3D Modeling</span>
+              <span><strong>03</strong> Finish Preview</span>
+              <span><strong>04</strong> Flawless Execution</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="business-lines section-cream" aria-labelledby="business-title">
+        <div class="container">
+          <div class="section-intro">
+            <p class="eyebrow">Three Business Lines</p>
+            <h2 id="business-title">Painting, restoration, and training under one standard</h2>
+            <p>
+              Choose the service path that fits your space, project stage, or
+              career goal.
+            </p>
+          </div>
+
+          <div class="service-grid">
+            <article class="service-card reveal-card" id="painting">
+              <span class="card-label">Painting</span>
+              <h3>Professional Painting</h3>
+              <p>
+                Interior and exterior painting for homes, offices, retail
+                spaces, and commercial projects.
+              </p>
+              <ul>
+                <li>Interior wall painting</li>
+                <li>Exterior painting</li>
+                <li>Color refresh</li>
+                <li>Feature walls</li>
+              </ul>
+              <a href="#process">Learn More</a>
+            </article>
+
+            <article class="service-card reveal-card" id="renovation">
+              <span class="card-label">Renovation</span>
+              <h3>Renovation & Wall Restoration</h3>
+              <p>
+                Wall repair, surface preparation, repainting, restoration, and
+                finish upgrades for spaces that need a fresh start.
+              </p>
+              <ul>
+                <li>Wall repair</li>
+                <li>Old wall restoration</li>
+                <li>Crack and surface fixing</li>
+                <li>Finish upgrade</li>
+              </ul>
+              <a href="#process">Learn More</a>
+            </article>
+
+            <article class="service-card reveal-card" id="training-card">
+              <span class="card-label">Academy</span>
+              <h3>Painter Training Academy</h3>
+              <p>
+                Hands-on training for new painters, decorators, and future
+                painting business owners.
+              </p>
+              <ul>
+                <li>Beginner painter training</li>
+                <li>Tool handling</li>
+                <li>Surface preparation</li>
+                <li>Safety and workflow</li>
+              </ul>
+              <a href="#training">Learn More</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="signature section-dark" id="process" aria-labelledby="process-title">
+        <div class="container">
+          <div class="signature-grid">
+            <div class="signature-copy reveal-process">
+              <p class="eyebrow">Our Signature Process</p>
+              <div class="gold-line" aria-hidden="true"></div>
+              <h2 id="process-title">
+                A Smarter, More Refined Way to Transform Your Walls.
+              </h2>
+              <p>
+                We combine on-site space scanning, 3D planning, realistic finish
+                visualization, and careful painting execution so clients can
+                approve the direction before work begins.
+              </p>
+              <a class="text-link" href="#contact">Book a process consultation</a>
+            </div>
+
+            <div class="process-track">
+              <article class="process-step reveal-process">
+                <div class="process-meta">
+                  <span>01</span>
+                  <strong>Space Scanning</strong>
+                </div>
+                <div class="process-visual visual-scan" aria-hidden="true"></div>
+                <p>
+                  We scan and measure your space to capture accurate room
+                  details, wall conditions, and project dimensions.
+                </p>
+              </article>
+              <span class="process-arrow" aria-hidden="true">→</span>
+              <article class="process-step reveal-process">
+                <div class="process-meta">
+                  <span>02</span>
+                  <strong>3D Space Modeling</strong>
+                </div>
+                <div class="process-visual visual-model" aria-hidden="true"></div>
+                <p>
+                  Our team builds a detailed 3D model based on your room layout,
+                  proportions, and architectural details.
+                </p>
+              </article>
+              <span class="process-arrow" aria-hidden="true">→</span>
+              <article class="process-step reveal-process">
+                <div class="process-meta">
+                  <span>03</span>
+                  <strong>Finish & Color Visualization</strong>
+                </div>
+                <div class="process-visual visual-finish" aria-hidden="true"></div>
+                <p>
+                  Preview custom colors, wall finishes, and textures in
+                  realistic lighting before the work begins.
+                </p>
+              </article>
+              <span class="process-arrow" aria-hidden="true">→</span>
+              <article class="process-step reveal-process">
+                <div class="process-meta">
+                  <span>04</span>
+                  <strong>Quote + Flawless Execution</strong>
+                </div>
+                <div class="process-visual visual-execute" aria-hidden="true"></div>
+                <p>
+                  Receive a clear project quote, approve the final plan, and let
+                  our team complete the work with care and precision.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="portfolio section-dark-alt" id="portfolio" aria-labelledby="portfolio-title">
+        <div class="container">
+          <div class="section-intro section-intro-dark">
+            <p class="eyebrow">Portfolio</p>
+            <h2 id="portfolio-title">Selected transformations</h2>
+            <p>
+              Replace these project image panels with your own photos when the
+              real portfolio is ready.
+            </p>
+          </div>
+
+          <div class="portfolio-grid">
+            <article class="project-card reveal-portfolio">
+              <div class="project-image project-residential" aria-label="Residential painting project image placeholder"></div>
+              <div class="project-body">
+                <h3>Residential painting</h3>
+                <dl>
+                  <div><dt>Location</dt><dd>Private home</dd></div>
+                  <div><dt>Service</dt><dd>Interior painting</dd></div>
+                  <div><dt>Timeline</dt><dd>3-5 days</dd></div>
+                </dl>
+                <a href="#contact">View Project</a>
+              </div>
+            </article>
+
+            <article class="project-card reveal-portfolio">
+              <div class="project-image project-renovation" aria-label="Renovation project image placeholder"></div>
+              <div class="project-body">
+                <h3>Renovation</h3>
+                <dl>
+                  <div><dt>Location</dt><dd>Older interior</dd></div>
+                  <div><dt>Service</dt><dd>Wall restoration</dd></div>
+                  <div><dt>Timeline</dt><dd>5-8 days</dd></div>
+                </dl>
+                <a href="#contact">View Project</a>
+              </div>
+            </article>
+
+            <article class="project-card reveal-portfolio">
+              <div class="project-image project-decorative" aria-label="Decorative finish project image placeholder"></div>
+              <div class="project-body">
+                <h3>Decorative finish</h3>
+                <dl>
+                  <div><dt>Location</dt><dd>Feature wall</dd></div>
+                  <div><dt>Service</dt><dd>Special finish</dd></div>
+                  <div><dt>Timeline</dt><dd>2-3 days</dd></div>
+                </dl>
+                <a href="#contact">View Project</a>
+              </div>
+            </article>
+
+            <article class="project-card reveal-portfolio">
+              <div class="project-image project-commercial" aria-label="Commercial space project image placeholder"></div>
+              <div class="project-body">
+                <h3>Commercial space</h3>
+                <dl>
+                  <div><dt>Location</dt><dd>Retail space</dd></div>
+                  <div><dt>Service</dt><dd>Commercial finish</dd></div>
+                  <div><dt>Timeline</dt><dd>1 week</dd></div>
+                </dl>
+                <a href="#contact">View Project</a>
+              </div>
+            </article>
+
+            <article class="project-card reveal-portfolio">
+              <div class="project-image project-training" aria-label="Training workshop project image placeholder"></div>
+              <div class="project-body">
+                <h3>Training workshop</h3>
+                <dl>
+                  <div><dt>Location</dt><dd>Academy studio</dd></div>
+                  <div><dt>Service</dt><dd>Painter training</dd></div>
+                  <div><dt>Timeline</dt><dd>Weekend session</dd></div>
+                </dl>
+                <a href="#training">View Project</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="training section-cream" id="training" aria-labelledby="training-title">
+        <div class="container training-grid">
+          <div class="training-copy reveal-card">
+            <p class="eyebrow">Training Academy</p>
+            <h2 id="training-title">Train to Become a Professional Painter</h2>
+            <p>
+              Our training program teaches practical painting skills, wall
+              preparation, tool use, material knowledge, safety, and real project
+              workflow.
+            </p>
+            <div class="button-row">
+              <a class="button button-primary" href="#training-programs">View Training Programs</a>
+              <a class="button button-light" href="#contact">Apply for Training</a>
+            </div>
+          </div>
+
+          <div class="training-programs" id="training-programs">
+            <article class="training-card reveal-card">
+              <h3>Beginner Painter Course</h3>
+              <p>Tools, setup, clean application, and real jobsite basics.</p>
+            </article>
+            <article class="training-card reveal-card">
+              <h3>Wall Preparation</h3>
+              <p>Inspection, patching, sanding, priming, and masking.</p>
+            </article>
+            <article class="training-card reveal-card">
+              <h3>Paint & Material Basics</h3>
+              <p>Paint systems, finishes, materials, and room conditions.</p>
+            </article>
+            <article class="training-card reveal-card">
+              <h3>Decorative Finish Training</h3>
+              <p>Feature walls, refined finishes, and detail control.</p>
+            </article>
+            <article class="training-card reveal-card">
+              <h3>Business & Client Workflow</h3>
+              <p>Consultation, scope planning, quoting, and final handover.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="why section-cream-soft" aria-labelledby="why-title">
+        <div class="container">
+          <div class="section-intro">
+            <p class="eyebrow">Why Choose Us</p>
+            <h2 id="why-title">Professional standards from planning to handover</h2>
+            <p>
+              The same standards used to train painters guide how each project
+              is assessed, prepared, finished, and reviewed.
+            </p>
+          </div>
+          <div class="why-grid">
+            <div class="why-card reveal-card">Space scanning before work begins</div>
+            <div class="why-card reveal-card">3D planning and finish preview</div>
+            <div class="why-card reveal-card">Clear quote and timeline</div>
+            <div class="why-card reveal-card">Professional surface preparation</div>
+            <div class="why-card reveal-card">Skilled painters</div>
+            <div class="why-card reveal-card">Training-backed standards</div>
+            <div class="why-card reveal-card">Clean final handover</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact section-dark" id="contact" aria-labelledby="contact-title">
+        <div class="container contact-panel reveal-contact">
+          <div>
+            <p class="eyebrow">Contact</p>
+            <h2 id="contact-title">Book a Site Visit or Ask About Training</h2>
+            <p>
+              Send the basic details and the team can follow up about painting,
+              renovation, or painter training. For on-site work, the next step is
+              usually a space review, measurement, and clear quote.
+            </p>
+          </div>
+
+          <form class="booking-form" action="#" method="post" novalidate>
+            <div class="form-row">
+              <label>
+                Full Name
+                <input type="text" name="name" autocomplete="name" required />
+              </label>
+              <label>
+                Email
+                <input type="email" name="email" autocomplete="email" required />
+              </label>
+            </div>
+            <div class="form-row">
+              <label>
+                Phone
+                <input type="tel" name="phone" autocomplete="tel" />
+              </label>
+              <label>
+                Project Location
+                <input type="text" name="location" autocomplete="street-address" />
+              </label>
+            </div>
+            <div class="form-row">
+              <label>
+                I am interested in
+                <select name="interest" required>
+                  <option value="">Select one</option>
+                  <option>Painting</option>
+                  <option>Renovation</option>
+                  <option>Painter Training</option>
+                </select>
+              </label>
+              <label>
+                Preferred Date
+                <input type="date" name="date" />
+              </label>
+            </div>
+            <label>
+              Message
+              <textarea name="message" rows="5"></textarea>
+            </label>
+            <button class="button button-primary" type="submit">Submit Request</button>
+            <p class="form-status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a class="brand footer-brand" href="#home">
+            <span class="brand-mark">NF</span>
+            <span>
+              <span class="brand-name">Northline Finish Co.</span>
+              <span class="brand-subtitle">Premium painting, renovation, training</span>
+            </span>
+          </a>
+          <p>
+            A refined painting and wall renovation company with a practical
+            painter training academy.
+          </p>
+        </div>
+        <div>
+          <h3>Navigation</h3>
+          <a href="#painting">Painting</a>
+          <a href="#renovation">Renovation</a>
+          <a href="#training">Training</a>
+          <a href="#process">Process</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <p>hello@northlinefinish.com</p>
+          <p>(212) 555-0198</p>
+          <p>Site visits by appointment</p>
+        </div>
+        <div>
+          <h3>Social</h3>
+          <a href="#" aria-label="Instagram placeholder">Instagram</a>
+          <a href="#" aria-label="LinkedIn placeholder">LinkedIn</a>
+          <a href="#" aria-label="YouTube placeholder">YouTube</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
