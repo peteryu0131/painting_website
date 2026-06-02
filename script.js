@@ -36,7 +36,7 @@ if (bookingForm) {
 
     bookingForm.reset();
     if (status) {
-      status.textContent = "Request noted. Connect this form to your booking email or CRM when ready.";
+      status.textContent = "Consultation request noted. Connect this form to your studio email or CRM when ready.";
     }
   });
 }

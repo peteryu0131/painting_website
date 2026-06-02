@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Maison Murale Training Academy teaches professional wall preparation, tool control, decorative finishes, and client-ready painting workflow."
+    />
+    <title>Maison Murale Training Academy | Professional Painter Training</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      defer
+    ></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="Primary navigation">
+        <a class="brand" href="index.html#home" aria-label="Maison Murale home">
+          <span class="brand-mark" aria-hidden="true">
+            <span class="brand-crown"></span>
+            <span class="brand-initial">M</span>
+          </span>
+          <span>
+            <span class="brand-name">Maison Murale</span>
+            <span class="brand-subtitle">Luxury Wall Painting</span>
+          </span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <span class="mobile-menu-fallback" aria-hidden="true"></span>
+
+        <div class="site-nav" data-nav>
+          <a href="index.html#home">Home</a>
+          <a href="index.html#portfolio">Portfolio</a>
+          <a href="index.html#services">Services</a>
+          <a href="training.html">Training</a>
+          <a href="index.html#process">Process</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+
+        <a class="nav-cta uiverse-button" href="#apply">Apply for Training</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="academy-hero section-dark luxury-texture" id="academy-home" aria-labelledby="academy-title">
+        <div class="container academy-hero-grid">
+          <div class="academy-hero-copy">
+            <p class="eyebrow">Maison Murale Training Academy</p>
+            <h1 id="academy-title">Train to Paint Walls With Professional Control</h1>
+            <p>
+              A hands-on painter training program for people who want to learn
+              clean preparation, confident tool handling, decorative finish
+              basics, and professional site standards.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary uiverse-button" href="#apply">Apply for Training</a>
+              <a class="button button-secondary uiverse-button" href="index.html">Back to Main Site</a>
+            </div>
+          </div>
+
+          <div class="academy-visual luxury-panel">
+            <img
+              src="assets/hero-olive-interior.png"
+              width="1536"
+              height="1024"
+              alt="Interior wall painting training environment"
+            />
+            <div class="academy-badge">
+              <span>4</span>
+              <p>Core studio modules</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="academy-modules section-dark-alt" aria-labelledby="modules-title">
+        <div class="container">
+          <div class="section-intro section-intro-dark">
+            <p class="eyebrow">Curriculum</p>
+            <h2 id="modules-title">From wall prep to client-ready execution</h2>
+            <p>
+              The program is practical, visual, and built around real site
+              habits instead of abstract classroom theory.
+            </p>
+          </div>
+
+          <div class="module-grid">
+            <article class="module-card uiverse-card reveal-card" data-animate="card">
+              <span>01</span>
+              <h3>Foundation Wall Preparation</h3>
+              <p>Inspection, patching, sanding, cleaning, priming, and masking before paint touches the wall.</p>
+            </article>
+            <article class="module-card uiverse-card reveal-card" data-animate="card">
+              <span>02</span>
+              <h3>Brush, Roller &amp; Tool Control</h3>
+              <p>Cut lines, roller pressure, coverage, edge discipline, tool care, and efficient room setup.</p>
+            </article>
+            <article class="module-card uiverse-card reveal-card" data-animate="card">
+              <span>03</span>
+              <h3>Decorative Finish Practice</h3>
+              <p>Feature walls, layered movement, sample boards, finish consistency, and client preview basics.</p>
+            </article>
+            <article class="module-card uiverse-card reveal-card" data-animate="card">
+              <span>04</span>
+              <h3>Client Workflow &amp; Site Standards</h3>
+              <p>Jobsite protection, quoting basics, communication, timeline discipline, cleanup, and handover.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="academy-path section-dark luxury-texture" aria-labelledby="path-title">
+        <div class="container academy-path-grid">
+          <div>
+            <p class="eyebrow">Who It Is For</p>
+            <h2 id="path-title">Built for beginners and working painters</h2>
+          </div>
+          <div class="path-list luxury-panel">
+            <p>New painters who need a disciplined starting system.</p>
+            <p>Decorators who want stronger wall preparation and finish control.</p>
+            <p>Small teams who need consistent site standards and client workflow.</p>
+            <p>Future business owners who want to understand project delivery.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact section-dark-alt" id="apply" aria-labelledby="apply-title">
+        <div class="container contact-panel luxury-panel uiverse-card reveal-contact" data-animate="contact">
+          <div class="contact-copy">
+            <p class="eyebrow">Apply for Training</p>
+            <h2 id="apply-title">Tell us about your painting goals</h2>
+            <p>
+              Send your contact details and the training path you are interested
+              in. We can follow up with cohort dates, format, and prerequisites.
+            </p>
+          </div>
+
+          <form class="booking-form" action="#" method="post" novalidate>
+            <div class="form-row">
+              <label>
+                Full Name
+                <input type="text" name="name" autocomplete="name" required />
+              </label>
+              <label>
+                Email Address
+                <input type="email" name="email" autocomplete="email" required />
+              </label>
+            </div>
+            <div class="form-row">
+              <label>
+                Phone Number
+                <input type="tel" name="phone" autocomplete="tel" />
+              </label>
+              <label>
+                Training Interest
+                <select name="interest" required>
+                  <option value="">Select one</option>
+                  <option>Beginner painter training</option>
+                  <option>Decorative finish practice</option>
+                  <option>Team training</option>
+                  <option>Business and client workflow</option>
+                </select>
+              </label>
+            </div>
+            <label>
+              What do you want to learn?
+              <textarea name="message" rows="5"></textarea>
+            </label>
+            <button class="button button-primary uiverse-button" type="submit">Submit Training Request</button>
+            <p class="form-status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a class="brand footer-brand" href="index.html#home">
+            <span class="brand-mark" aria-hidden="true">
+              <span class="brand-crown"></span>
+              <span class="brand-initial">M</span>
+            </span>
+            <span>
+              <span class="brand-name">Maison Murale</span>
+              <span class="brand-subtitle">Luxury Wall Painting</span>
+            </span>
+          </a>
+        </div>
+        <div>
+          <h3>Navigation</h3>
+          <a href="index.html#portfolio">Portfolio</a>
+          <a href="index.html#services">Services</a>
+          <a href="training.html">Training</a>
+          <a href="index.html#process">Process</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <p>studio@maisonmurale.com</p>
+          <p>+1 (212) 555-0198</p>
+          <p>Training by cohort</p>
+        </div>
+        <div>
+          <h3>Studio</h3>
+          <a href="#" aria-label="Privacy policy placeholder">Privacy Policy</a>
+          <a href="#" aria-label="Terms and conditions placeholder">Terms &amp; Conditions</a>
+          <a href="index.html">Back to Main Site</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
