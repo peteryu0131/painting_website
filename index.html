@@ -26,12 +26,12 @@
     <script src="script.js" defer></script>
   </head>
   <body>
+    <div class="scroll-progress" data-scroll-progress aria-hidden="true"></div>
     <header class="site-header">
       <nav class="nav-shell" aria-label="Primary navigation">
         <a class="brand" href="#home" aria-label="Maison Murale home">
           <span class="brand-mark" aria-hidden="true">
-            <span class="brand-crown"></span>
-            <span class="brand-initial">M</span>
+            <img src="assets/logo-crest.png" width="746" height="991" alt="" />
           </span>
           <span>
             <span class="brand-name">Maison Murale</span>
@@ -63,31 +63,39 @@
         <a class="nav-cta uiverse-button" href="#contact">Book a Consultation</a>
       </nav>
     </header>
+    <a
+      class="floating-consultation uiverse-button"
+      href="#contact"
+      data-floating-consultation
+      aria-label="Book a consultation with Maison Murale"
+    >
+      Book a Consultation
+    </a>
 
     <main>
       <section class="hero section-dark luxury-texture" id="home" aria-labelledby="hero-title">
         <div class="container hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow hero-reveal">
+            <p class="eyebrow hero-reveal" data-animate="hero">
               Private Interior Atelier
             </p>
-            <p class="hero-brand hero-reveal">Maison Murale</p>
-            <h1 class="hero-title hero-reveal" id="hero-title">
+            <p class="hero-brand hero-reveal" data-animate="hero">Maison Murale</p>
+            <h1 class="hero-title hero-reveal" id="hero-title" data-animate="hero">
               Walls That Define
               <span>Extraordinary<br />Spaces</span>
             </h1>
-            <p class="hero-text hero-reveal">
+            <p class="hero-text hero-reveal" data-animate="hero">
               Bespoke wall painting crafted with artistry, technology, and premium
               materials. Designed around your space before the first brushstroke.
             </p>
-            <div class="hero-actions hero-reveal">
+            <div class="hero-actions hero-reveal" data-animate="hero">
               <a class="button button-primary uiverse-button" href="#contact">Start Your Project</a>
               <a class="button button-secondary uiverse-button" href="#portfolio">View Portfolio</a>
             </div>
           </div>
 
           <div class="hero-visual hero-reveal">
-            <div class="image-frame hero-image-wrap">
+            <div class="image-frame hero-image-wrap" data-animate="hero-image">
               <img
                 src="assets/hero-olive-interior.png"
                 width="1536"
@@ -96,7 +104,7 @@
                 fetchpriority="high"
               />
             </div>
-            <div class="floating-process" aria-label="Premium process highlights">
+            <div class="floating-process" data-animate="floating" aria-label="Premium process highlights">
               <span><strong>01</strong> Guided Room Capture</span>
               <span><strong>02</strong> 3D Room Modeling</span>
               <span><strong>03</strong> Realistic Preview</span>
@@ -133,7 +141,7 @@
 
       <section class="signature section-dark luxury-texture" id="process" aria-labelledby="process-title">
         <div class="container">
-          <div class="section-intro section-intro-dark">
+          <div class="section-intro section-intro-dark" data-animate="section-copy">
             <p class="eyebrow">Our Signature Process</p>
             <h2 id="process-title">Technology Meets Artistry</h2>
             <p>
@@ -205,7 +213,7 @@
 
       <section class="services section-dark-alt" id="services" aria-labelledby="services-title">
         <div class="container">
-          <div class="section-intro section-intro-dark">
+          <div class="section-intro section-intro-dark" data-animate="section-copy">
             <p class="eyebrow">Premium Painting Services</p>
             <h2 id="services-title">A private studio for walls with presence</h2>
             <p>
@@ -215,31 +223,66 @@
           </div>
 
           <div class="service-grid">
-            <article class="service-card uiverse-card reveal-card" data-animate="card">
+            <article
+              class="service-card uiverse-card reveal-card"
+              data-animate="card"
+              data-project-type="Bespoke wall painting"
+              role="button"
+              tabindex="0"
+              aria-label="Start a bespoke wall painting inquiry"
+            >
               <span class="icon-luxury icon-frame" aria-hidden="true"></span>
               <span class="card-label">01</span>
               <h3>Bespoke Wall Painting</h3>
               <p>Custom color direction and refined application for residential interiors and feature walls.</p>
             </article>
-            <article class="service-card uiverse-card reveal-card" data-animate="card">
+            <article
+              class="service-card uiverse-card reveal-card"
+              data-animate="card"
+              data-project-type="Decorative finish"
+              role="button"
+              tabindex="0"
+              aria-label="Start a decorative finish inquiry"
+            >
               <span class="icon-luxury icon-palette" aria-hidden="true"></span>
               <span class="card-label">02</span>
               <h3>Decorative Finishes</h3>
               <p>Layered texture, tonal movement, and polished finish systems for gallery-like walls.</p>
             </article>
-            <article class="service-card uiverse-card reveal-card" data-animate="card">
+            <article
+              class="service-card uiverse-card reveal-card"
+              data-animate="card"
+              data-project-type="Mural commission"
+              role="button"
+              tabindex="0"
+              aria-label="Start a mural commission inquiry"
+            >
               <span class="icon-luxury icon-brush" aria-hidden="true"></span>
               <span class="card-label">03</span>
               <h3>Murals &amp; Artistic Commissions</h3>
               <p>Handcrafted visual statements designed for private residences, suites, and hospitality spaces.</p>
             </article>
-            <article class="service-card uiverse-card reveal-card" data-animate="card">
+            <article
+              class="service-card uiverse-card reveal-card"
+              data-animate="card"
+              data-project-type="Heritage restoration"
+              role="button"
+              tabindex="0"
+              aria-label="Start a heritage restoration inquiry"
+            >
               <span class="icon-luxury icon-column" aria-hidden="true"></span>
               <span class="card-label">04</span>
               <h3>Heritage &amp; Restoration</h3>
               <p>Careful wall renewal, surface preparation, and finish matching for older interiors.</p>
             </article>
-            <article class="service-card service-card-wide uiverse-card reveal-card" data-animate="card">
+            <article
+              class="service-card service-card-wide uiverse-card reveal-card"
+              data-animate="card"
+              data-project-type="Commercial or hospitality project"
+              role="button"
+              tabindex="0"
+              aria-label="Start a commercial or hospitality project inquiry"
+            >
               <span class="icon-luxury icon-briefcase" aria-hidden="true"></span>
               <span class="card-label">05</span>
               <h3>Commercial &amp; Hospitality Projects</h3>
@@ -251,7 +294,7 @@
 
       <section class="training-teaser section-dark luxury-texture" id="training" aria-labelledby="training-title">
         <div class="container training-teaser-grid">
-          <div class="training-teaser-copy reveal-card" data-animate="card">
+          <div class="training-teaser-copy reveal-card" data-animate="section-copy">
             <p class="eyebrow">Training Academy</p>
             <h2 id="training-title">Professional Painter Training</h2>
             <p>
@@ -287,7 +330,7 @@
 
       <section class="finish-collection section-dark luxury-texture" aria-labelledby="finish-title">
         <div class="container finish-grid">
-          <div class="finish-copy reveal-card" data-animate="card">
+          <div class="finish-copy reveal-card" data-animate="section-copy">
             <p class="eyebrow">Finish Collection</p>
             <h2 id="finish-title">Material tones chosen like art objects</h2>
             <p>
@@ -307,7 +350,7 @@
 
       <section class="portfolio section-dark-alt" id="portfolio" aria-labelledby="portfolio-title">
         <div class="container">
-          <div class="section-intro section-intro-dark">
+          <div class="section-intro section-intro-dark" data-animate="section-copy">
             <p class="eyebrow">Curated Works</p>
             <h2 id="portfolio-title">Timeless spaces, masterfully crafted</h2>
             <p>
@@ -355,7 +398,7 @@
 
       <section class="contact section-dark luxury-texture" id="contact" aria-labelledby="contact-title">
         <div class="container contact-panel luxury-panel uiverse-card reveal-contact" data-animate="contact">
-          <div class="contact-copy">
+          <div class="contact-copy" data-animate="section-copy">
             <p class="eyebrow">Start Your Bespoke Project</p>
             <h2 id="contact-title">Let's create something exceptional</h2>
             <p>
@@ -370,6 +413,9 @@
           </div>
 
           <form class="booking-form" action="#" method="post" novalidate>
+            <p class="selection-note" data-selection-note aria-live="polite">
+              Select a service card to prefill your consultation request.
+            </p>
             <div class="form-row">
               <label>
                 Full Name
@@ -392,6 +438,7 @@
                   <option>Bespoke wall painting</option>
                   <option>Decorative finish</option>
                   <option>Mural commission</option>
+                  <option>Heritage restoration</option>
                   <option>Commercial or hospitality project</option>
                 </select>
               </label>
@@ -412,8 +459,7 @@
         <div>
           <a class="brand footer-brand" href="#home">
             <span class="brand-mark" aria-hidden="true">
-              <span class="brand-crown"></span>
-              <span class="brand-initial">M</span>
+              <img src="assets/logo-crest.png" width="746" height="991" alt="" />
             </span>
             <span>
               <span class="brand-name">Maison Murale</span>

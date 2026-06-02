@@ -51,16 +51,37 @@ body::before {
 }
 
 body::after {
+  /* engraved-wall-texture */
   position: fixed;
   inset: 0;
   z-index: -1;
   pointer-events: none;
   content: "";
-  opacity: 0.12;
+  opacity: 0.15;
   background-image:
-    repeating-radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.1) 0 1px, transparent 1px 4px),
-    linear-gradient(135deg, rgba(199, 161, 90, 0.05), transparent 40%);
+    radial-gradient(ellipse at 18% 24%, rgba(199, 161, 90, 0.07), transparent 28rem),
+    radial-gradient(ellipse at 78% 38%, rgba(243, 234, 216, 0.035), transparent 24rem),
+    repeating-linear-gradient(0deg, transparent 0 76px, rgba(199, 161, 90, 0.045) 76px 77px, transparent 77px 152px),
+    repeating-linear-gradient(90deg, transparent 0 118px, rgba(199, 161, 90, 0.03) 118px 119px, transparent 119px 236px),
+    repeating-radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px 5px);
+  background-position: left top;
+  background-repeat: repeat;
+  background-size: auto, auto, auto, auto, 28px 28px;
   mix-blend-mode: overlay;
+}
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  width: 100%;
+  height: 2px;
+  pointer-events: none;
+  background: linear-gradient(90deg, var(--gold-light), var(--gold), var(--gold-dark));
+  box-shadow: 0 0 14px rgba(199, 161, 90, 0.22);
+  transform: scaleX(0);
+  transform-origin: left center;
 }
 
 img {
@@ -112,8 +133,8 @@ button {
   background:
     radial-gradient(circle at 15% 0%, rgba(199, 161, 90, 0.08), transparent 30rem),
     linear-gradient(180deg, rgba(3, 16, 13, 0.72), rgba(6, 22, 18, 0.94));
-  border-top: 1px solid rgba(199, 161, 90, 0.2);
-  border-bottom: 1px solid rgba(199, 161, 90, 0.2);
+  border-top: 1px solid rgba(199, 161, 90, 0.22);
+  border-bottom: 0;
 }
 
 .luxury-texture {
@@ -128,14 +149,29 @@ button {
 .luxury-texture::after {
   position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: 0;
   pointer-events: none;
   content: "";
-  opacity: 0.22;
+  opacity: 0.18;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
-  background-size: 48px 48px;
+    radial-gradient(ellipse at 22% 28%, rgba(199, 161, 90, 0.09), transparent 22rem),
+    radial-gradient(ellipse at 74% 58%, rgba(243, 234, 216, 0.035), transparent 24rem),
+    linear-gradient(rgba(255, 255, 255, 0.026) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(135deg, transparent 0 48%, rgba(199, 161, 90, 0.035) 49%, transparent 51%);
+  background-position: left top;
+  background-size: auto, auto, 56px 56px, 56px 56px, 160px 160px;
+  mix-blend-mode: overlay;
+  mask-image:
+    radial-gradient(circle at 18% 28%, #000 0 20rem, transparent 34rem),
+    radial-gradient(circle at 78% 44%, #000 0 16rem, transparent 30rem),
+    radial-gradient(circle at 50% 82%, #000 0 16rem, transparent 34rem);
+  mask-composite: add;
+}
+
+.luxury-texture > .container {
+  position: relative;
+  z-index: 1;
 }
 
 .luxury-panel {
@@ -241,67 +277,21 @@ p {
 }
 
 .brand-mark {
-  position: relative;
-  display: grid;
-  width: 48px;
-  height: 48px;
+  display: inline-grid;
+  flex: 0 0 auto;
+  width: 38px;
+  height: 38px;
   place-items: center;
-  border: 1px solid rgba(199, 161, 90, 0.72);
-  border-radius: 50%;
-  color: var(--gold-light);
-  background:
-    radial-gradient(circle, rgba(199, 161, 90, 0.08), transparent 58%),
-    rgba(3, 16, 13, 0.84);
+  overflow: hidden;
+  transform: translateY(-4px);
 }
 
-.brand-mark::before,
-.brand-mark::after {
-  position: absolute;
-  inset: 5px;
-  border: 1px solid rgba(199, 161, 90, 0.28);
-  border-radius: 50%;
-  content: "";
-}
-
-.brand-mark::after {
-  inset: 11px;
-  border-style: dotted;
-  opacity: 0.65;
-}
-
-.brand-crown {
-  position: absolute;
-  top: 7px;
-  width: 16px;
-  height: 8px;
-  border-bottom: 1px solid var(--gold-light);
-}
-
-.brand-crown::before,
-.brand-crown::after {
-  position: absolute;
-  bottom: 1px;
-  width: 7px;
-  height: 7px;
-  border-top: 1px solid var(--gold-light);
-  content: "";
-}
-
-.brand-crown::before {
-  left: 1px;
-  transform: rotate(45deg);
-}
-
-.brand-crown::after {
-  right: 1px;
-  transform: rotate(-45deg);
-}
-
-.brand-initial {
-  margin-top: 7px;
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 1.35rem;
-  line-height: 1;
+.brand-mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.22));
 }
 
 .brand-name,
@@ -329,14 +319,38 @@ p {
   font-size: 0.74rem;
 }
 
+.site-nav a {
+  position: relative;
+  padding: 5px 0;
+}
+
+.site-nav a::after {
+  position: absolute;
+  right: 0;
+  bottom: -10px;
+  left: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 220ms ease;
+}
+
 .site-nav a,
 .site-footer a {
   transition: color 220ms ease;
 }
 
 .site-nav a:hover,
+.site-nav a.is-active,
 .site-footer a:hover {
   color: var(--gold-light);
+}
+
+.site-nav a:hover::after,
+.site-nav a.is-active::after {
+  transform: scaleX(1);
 }
 
 .nav-cta {
@@ -356,6 +370,47 @@ p {
   background: rgba(199, 161, 90, 0.12);
   color: var(--cream);
   transform: translateY(-1px);
+}
+
+.floating-consultation {
+  position: fixed;
+  right: clamp(18px, 3vw, 34px);
+  bottom: clamp(18px, 3vw, 34px);
+  z-index: 42;
+  border: 1px solid rgba(224, 195, 131, 0.58);
+  background:
+    linear-gradient(135deg, rgba(216, 186, 117, 0.95), rgba(168, 125, 54, 0.95)),
+    var(--gold);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.14),
+    0 18px 40px rgba(0, 0, 0, 0.34);
+  opacity: 0;
+  pointer-events: none;
+  padding: 13px 18px;
+  color: var(--bg-main);
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transform: translateY(16px);
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.floating-consultation.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.floating-consultation:hover {
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.18),
+    0 22px 48px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
 }
 
 .nav-toggle {
@@ -476,28 +531,6 @@ p {
     radial-gradient(circle at 18% 72%, rgba(199, 161, 90, 0.08), transparent 20rem);
 }
 
-.hero::after {
-  /* ornamental-linework */
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  content: "";
-  opacity: 0.1;
-  background-image:
-    url("data:image/svg+xml,%3Csvg width='420' height='420' viewBox='0 0 420 420' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%238f6f32' stroke-width='1.1' stroke-linecap='round' stroke-linejoin='round' opacity='.88'%3E%3Cpath d='M40 174V40h134'/%3E%3Cpath d='M72 154V72h82'/%3E%3Cpath d='M40 174c31-5 55-29 60-60'/%3E%3Cpath d='M82 156c21-7 37-23 44-44'/%3E%3Cpath d='M116 72c0 35-28 64-64 64'/%3E%3Cpath d='M96 40c0 31-25 56-56 56'/%3E%3Cpath d='M132 132c28-13 49-34 62-62'/%3E%3Cpath d='M54 218c42-18 75-51 93-93'/%3E%3Ccircle cx='156' cy='72' r='7'/%3E%3Ccircle cx='72' cy='156' r='5'/%3E%3Cpath d='M204 58c-16 20-16 40 0 60 16-20 16-40 0-60Z'/%3E%3Cpath d='M58 204c20-16 40-16 60 0-20 16-40 16-60 0Z'/%3E%3C/g%3E%3C/svg%3E"),
-    url("data:image/svg+xml,%3Csvg width='520' height='520' viewBox='0 0 520 520' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23684826' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round' opacity='.9'%3E%3Cpath d='M468 332v136H332'/%3E%3Cpath d='M436 352v84H352'/%3E%3Cpath d='M468 332c-36 7-63 34-70 70'/%3E%3Cpath d='M438 352c-24 6-43 25-49 49'/%3E%3Cpath d='M384 436c0-36 28-64 64-64'/%3E%3Cpath d='M416 468c0-32 20-52 52-52'/%3E%3Cpath d='M324 422c18-39 49-70 88-88'/%3E%3Cpath d='M286 480c15-52 48-85 100-100'/%3E%3Ccircle cx='352' cy='436' r='7'/%3E%3Ccircle cx='436' cy='352' r='5'/%3E%3Cpath d='M310 456c22-14 44-14 66 0-22 18-44 18-66 0Z'/%3E%3Cpath d='M456 310c14 22 14 44 0 66-18-22-18-44 0-66Z'/%3E%3C/g%3E%3C/svg%3E"),
-    linear-gradient(90deg, rgba(143, 111, 50, 0.24) 1px, transparent 1px),
-    linear-gradient(rgba(143, 111, 50, 0.18) 1px, transparent 1px);
-  background-repeat: no-repeat, no-repeat, repeat, repeat;
-  background-position: left 5% top 18%, right 4% bottom 12%, left top, left top;
-  background-size: 420px 420px, 520px 520px, 96px 96px, 96px 96px;
-  mask-image:
-    linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%),
-    linear-gradient(180deg, transparent 0%, #000 12%, #000 90%, transparent 100%);
-  mask-composite: intersect;
-}
-
 .hero-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.92fr) minmax(360px, 0.78fr);
@@ -560,12 +593,25 @@ p {
 }
 
 .image-frame {
+  position: relative;
   overflow: hidden;
   border: 1px solid rgba(199, 161, 90, 0.55);
   border-radius: 2px;
   box-shadow:
     inset 0 0 0 1px rgba(224, 195, 131, 0.08),
     0 30px 90px var(--shadow-dark);
+}
+
+.image-frame::before {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  content: "";
+  box-shadow:
+    inset 0 0 0 1px rgba(224, 195, 131, 0.16),
+    inset 0 0 42px rgba(224, 195, 131, 0.08),
+    inset 0 -80px 120px rgba(3, 16, 13, 0.18);
 }
 
 .hero-image-wrap {
@@ -822,8 +868,10 @@ p {
 
 .process-step {
   position: relative;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
-  min-height: 100%;
+  min-height: 390px;
   border-right: 1px solid rgba(199, 161, 90, 0.24);
   padding: 26px 22px;
   transition:
@@ -873,6 +921,8 @@ p {
 
 .process-meta {
   display: grid;
+  min-height: 74px;
+  align-content: start;
   gap: 8px;
 }
 
@@ -904,7 +954,7 @@ p {
 
 .process-visual {
   display: grid;
-  aspect-ratio: 16 / 10;
+  height: 148px;
   place-items: center;
   margin-top: 20px;
 }
@@ -952,8 +1002,10 @@ p {
 
 .process-step p {
   margin-top: 16px;
+  margin-bottom: 0;
   color: var(--text-muted);
   font-size: 0.92rem;
+  line-height: 1.58;
 }
 
 .process-arrow {
@@ -967,15 +1019,18 @@ p {
 /* Services */
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: minmax(318px, auto);
   gap: 16px;
+  align-items: stretch;
 }
 
 .service-card {
-  grid-column: span 2;
   position: relative;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
-  min-height: 292px;
+  min-height: 318px;
   border: 1px solid rgba(199, 161, 90, 0.32);
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.04), transparent 42%),
@@ -987,8 +1042,41 @@ p {
     box-shadow 240ms ease;
 }
 
+.service-card[data-project-type] {
+  cursor: pointer;
+}
+
+.service-card[data-project-type]::after {
+  position: absolute;
+  right: 24px;
+  bottom: 22px;
+  z-index: 2;
+  content: "Begin inquiry";
+  color: var(--gold-light);
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  opacity: 0;
+  text-transform: uppercase;
+  transform: translateY(8px);
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease;
+}
+
+.service-card[data-project-type]:hover::after,
+.service-card[data-project-type]:focus-visible::after {
+  opacity: 0.82;
+  transform: translateY(0);
+}
+
+.service-card[data-project-type]:focus-visible {
+  outline: 2px solid var(--gold-light);
+  outline-offset: 5px;
+}
+
 .service-card-wide {
-  grid-column: span 4;
+  grid-column: span 2;
 }
 
 .card-label {
@@ -1000,12 +1088,15 @@ p {
 
 .service-card h3 {
   margin-top: 12px;
-  font-size: clamp(1.75rem, 3vw, 2.45rem);
+  font-size: clamp(1.75rem, 2.25vw, 2.25rem);
+  line-height: 1.05;
 }
 
 .service-card p {
   margin-top: 16px;
+  margin-bottom: 0;
   color: var(--text-muted);
+  line-height: 1.55;
 }
 
 /* Training teaser */
@@ -1298,10 +1389,13 @@ p {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
+  align-items: stretch;
 }
 
 .project-card {
   position: relative;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   border: 1px solid rgba(199, 161, 90, 0.3);
   background: var(--bg-card-soft);
@@ -1312,7 +1406,20 @@ p {
 }
 
 .project-image {
-  aspect-ratio: 4 / 3.4;
+  flex: 0 0 auto;
+  aspect-ratio: 4 / 3.2;
+}
+
+.project-image::after {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background:
+    radial-gradient(circle at 50% 18%, rgba(243, 234, 216, 0.18), transparent 34%),
+    linear-gradient(180deg, transparent 50%, rgba(3, 16, 13, 0.28));
+  box-shadow: inset 0 0 0 1px rgba(224, 195, 131, 0.08);
+  mix-blend-mode: soft-light;
 }
 
 .project-residential::before,
@@ -1338,6 +1445,10 @@ p {
 }
 
 .project-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 178px;
   padding: 20px;
 }
 
@@ -1352,8 +1463,10 @@ p {
 
 .project-body p:last-child {
   margin-top: 12px;
+  margin-bottom: 0;
   color: var(--text-muted);
   font-size: 0.92rem;
+  line-height: 1.5;
 }
 
 /* Contact */
@@ -1400,6 +1513,16 @@ p {
 .booking-form {
   display: grid;
   gap: 16px;
+}
+
+.selection-note {
+  border: 1px solid rgba(199, 161, 90, 0.28);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.035), transparent 40%),
+    rgba(3, 16, 13, 0.34);
+  padding: 12px 14px;
+  color: var(--text-muted);
+  font-size: 0.86rem;
 }
 
 .form-row {
@@ -1526,6 +1649,7 @@ textarea {
   }
 
   .process-step {
+    min-height: 360px;
     border-right: 1px solid rgba(199, 161, 90, 0.24);
     border-bottom: 1px solid rgba(199, 161, 90, 0.24);
   }
@@ -1536,7 +1660,15 @@ textarea {
 
   .service-card,
   .service-card-wide {
-    grid-column: span 3;
+    grid-column: auto;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .service-card-wide {
+    grid-column: 1 / -1;
   }
 
   .training-preview {
@@ -1579,8 +1711,9 @@ textarea {
   }
 
   .brand-mark {
-    width: 42px;
-    height: 42px;
+    width: 34px;
+    height: 34px;
+    transform: translateY(-2px);
   }
 
   .nav-toggle {
@@ -1662,6 +1795,14 @@ textarea {
     width: 100%;
     justify-content: center;
     text-align: center;
+  }
+
+  .floating-consultation {
+    right: 14px;
+    bottom: 14px;
+    max-width: calc(100vw - 28px);
+    padding: 12px 14px;
+    font-size: 0.62rem;
   }
 
   .hero {
@@ -1770,6 +1911,18 @@ textarea {
   .service-card,
   .service-card-wide {
     grid-column: auto;
+    min-height: auto;
+  }
+
+  .process-step {
+    min-height: auto;
+  }
+
+  .process-visual {
+    height: 138px;
+  }
+
+  .project-body {
     min-height: auto;
   }
 
