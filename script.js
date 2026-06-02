@@ -58,61 +58,82 @@ window.addEventListener("load", () => {
     gsap.registerPlugin(window.ScrollTrigger);
   }
 
-  gsap.from(".hero-reveal", {
+  gsap.from("[data-animate='hero']", {
     autoAlpha: 0,
-    y: 24,
-    duration: 0.9,
+    y: 22,
+    duration: 1,
     ease: "power3.out",
-    stagger: 0.12,
+    stagger: 0.11,
+  });
+
+  gsap.from("[data-animate='hero-image']", {
+    autoAlpha: 0,
+    clipPath: "inset(12% 0% 12% 0%)",
+    duration: 1.15,
+    ease: "power3.out",
   });
 
   gsap.from(".hero-image-wrap img", {
     scale: 1.08,
-    autoAlpha: 0,
-    duration: 1.2,
+    duration: 1.45,
     ease: "power3.out",
   });
 
-  gsap.from(".floating-process span", {
+  gsap.from("[data-animate='floating'] span", {
     autoAlpha: 0,
-    y: 16,
-    duration: 0.65,
-    delay: 0.35,
+    y: 18,
+    duration: 0.72,
+    delay: 0.42,
     ease: "power3.out",
     stagger: 0.08,
   });
 
-  const revealGroups = [
-    [".reveal-card", { y: 28 }],
-    [".reveal-process", { y: 30 }],
-    [".reveal-portfolio", { y: 26 }],
-    [".reveal-contact", { y: 28 }],
-  ];
+  if (window.ScrollTrigger) {
+    const batchReveal = (selector, options = {}) => {
+      ScrollTrigger.batch(selector, {
+        interval: 0.08,
+        batchMax: options.batchMax || 4,
+        start: options.start || "top 84%",
+        once: true,
+        onEnter: (batch) => {
+          gsap.from(batch, {
+            autoAlpha: 0,
+            y: options.y || 28,
+            duration: options.duration || 0.78,
+            ease: "power3.out",
+            stagger: options.stagger || 0.08,
+          });
+        },
+      });
+    };
 
-  revealGroups.forEach(([selector, options]) => {
-    gsap.utils.toArray(selector).forEach((element) => {
+    batchReveal("[data-animate='card']", { y: 24, batchMax: 3 });
+    batchReveal("[data-animate='process']", { y: 28, batchMax: 4 });
+    batchReveal("[data-animate='portfolio']", { y: 24, batchMax: 3 });
+    batchReveal("[data-animate='contact']", { y: 30, batchMax: 1 });
+
+    gsap.utils.toArray(".process-visual, .project-image").forEach((element) => {
       gsap.from(element, {
-        autoAlpha: 0,
-        y: options.y,
-        duration: 0.75,
+        clipPath: "inset(0% 100% 0% 0%)",
+        duration: 0.9,
         ease: "power3.out",
         scrollTrigger: {
           trigger: element,
-          start: "top 84%",
+          start: "top 86%",
           once: true,
         },
       });
     });
-  });
 
-  gsap.to(".hero-image-wrap img", {
-    yPercent: 5,
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".hero",
-      start: "top top",
-      end: "bottom top",
-      scrub: true,
-    },
-  });
+    gsap.to(".hero-image-wrap img", {
+      yPercent: 5,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".hero",
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+  }
 });

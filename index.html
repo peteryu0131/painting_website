@@ -20,7 +20,7 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <header class="site-header" id="home">
+    <header class="site-header">
       <nav class="nav-shell" aria-label="Primary navigation">
         <a class="brand" href="#home" aria-label="Northline Finish Co. home">
           <span class="brand-mark">NF</span>
@@ -51,26 +51,26 @@
           <a href="#contact">Contact</a>
         </div>
 
-        <a class="nav-cta" href="#contact">Book a Site Visit</a>
+        <a class="nav-cta uiverse-button" href="#contact">Book a Site Visit</a>
       </nav>
     </header>
 
     <main>
-      <section class="hero section-dark" aria-labelledby="hero-title">
+      <section class="hero section-dark" id="home" aria-labelledby="hero-title">
         <div class="container hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow hero-reveal">
-              Premium Painting · Renovation · 3D Finish Preview
+            <p class="eyebrow hero-reveal" data-animate="hero">
+              Premium Painting &middot; Renovation &middot; 3D Finish Preview
             </p>
-            <h1 class="hero-title hero-reveal" id="hero-title">
+            <h1 class="hero-title hero-reveal" id="hero-title" data-animate="hero">
               Refined Walls, Planned Before We Paint
             </h1>
-            <p class="hero-text hero-reveal">We provide premium wall painting, renovation, and hands-on painter training, supported by space scanning, 3D modeling, and finish visualization before work begins.</p>
-            <div class="hero-actions hero-reveal">
-              <a class="button button-primary" href="#contact">Book a Site Visit</a>
-              <a class="button button-secondary" href="#process">Explore Our Process</a>
+            <p class="hero-text hero-reveal" data-animate="hero">We provide premium wall painting, renovation, and hands-on painter training, supported by space scanning, 3D modeling, and finish visualization before work begins.</p>
+            <div class="hero-actions hero-reveal" data-animate="hero">
+              <a class="button button-primary uiverse-button" href="#contact">Book a Site Visit</a>
+              <a class="button button-secondary uiverse-button" href="#process">Explore Our Process</a>
             </div>
-            <div class="hero-proof hero-reveal" aria-label="Key services">
+            <div class="hero-proof hero-reveal" data-animate="hero" aria-label="Key services">
               <span>On-site assessment</span>
               <span>3D planning</span>
               <span>Finish preview</span>
@@ -78,14 +78,14 @@
             </div>
           </div>
 
-          <div class="hero-visual hero-reveal">
+          <div class="hero-visual hero-reveal" data-animate="hero-image">
             <div class="image-frame hero-image-wrap">
               <img
                 src="assets/hero-olive-interior.png"
                 alt="Premium interior wall finish in a refined olive and cream room"
               />
             </div>
-            <div class="floating-process" aria-label="Premium process highlights">
+            <div class="floating-process" data-animate="floating" aria-label="Premium process highlights">
               <span><strong>01</strong> Space Scanning</span>
               <span><strong>02</strong> 3D Modeling</span>
               <span><strong>03</strong> Finish Preview</span>
@@ -107,7 +107,7 @@
           </div>
 
           <div class="service-grid">
-            <article class="service-card reveal-card" id="painting">
+            <article class="service-card uiverse-card reveal-card" data-animate="card" id="painting">
               <span class="card-label">Painting</span>
               <h3>Professional Painting</h3>
               <p>
@@ -123,7 +123,7 @@
               <a href="#process">Learn More</a>
             </article>
 
-            <article class="service-card reveal-card" id="renovation">
+            <article class="service-card uiverse-card reveal-card" data-animate="card" id="renovation">
               <span class="card-label">Renovation</span>
               <h3>Renovation & Wall Restoration</h3>
               <p>
@@ -139,7 +139,7 @@
               <a href="#process">Learn More</a>
             </article>
 
-            <article class="service-card reveal-card" id="training-card">
+            <article class="service-card uiverse-card reveal-card" data-animate="card" id="training-card">
               <span class="card-label">Academy</span>
               <h3>Painter Training Academy</h3>
               <p>
@@ -161,7 +161,7 @@
       <section class="signature section-dark" id="process" aria-labelledby="process-title">
         <div class="container">
           <div class="signature-grid">
-            <div class="signature-copy reveal-process">
+            <div class="signature-copy reveal-process" data-animate="process">
               <p class="eyebrow">Our Signature Process</p>
               <div class="gold-line" aria-hidden="true"></div>
               <h2 id="process-title">
@@ -176,7 +176,7 @@
             </div>
 
             <div class="process-track">
-              <article class="process-step reveal-process">
+              <article class="process-step uiverse-card reveal-process" data-animate="process">
                 <div class="process-meta">
                   <span>01</span>
                   <strong>Space Scanning</strong>
@@ -187,8 +187,8 @@
                   details, wall conditions, and project dimensions.
                 </p>
               </article>
-              <span class="process-arrow" aria-hidden="true">→</span>
-              <article class="process-step reveal-process">
+              <span class="process-arrow" aria-hidden="true">&rarr;</span>
+              <article class="process-step uiverse-card reveal-process" data-animate="process">
                 <div class="process-meta">
                   <span>02</span>
                   <strong>3D Space Modeling</strong>
@@ -199,8 +199,8 @@
                   proportions, and architectural details.
                 </p>
               </article>
-              <span class="process-arrow" aria-hidden="true">→</span>
-              <article class="process-step reveal-process">
+              <span class="process-arrow" aria-hidden="true">&rarr;</span>
+              <article class="process-step uiverse-card reveal-process" data-animate="process">
                 <div class="process-meta">
                   <span>03</span>
                   <strong>Finish & Color Visualization</strong>
@@ -211,8 +211,8 @@
                   realistic lighting before the work begins.
                 </p>
               </article>
-              <span class="process-arrow" aria-hidden="true">→</span>
-              <article class="process-step reveal-process">
+              <span class="process-arrow" aria-hidden="true">&rarr;</span>
+              <article class="process-step uiverse-card reveal-process" data-animate="process">
                 <div class="process-meta">
                   <span>04</span>
                   <strong>Quote + Flawless Execution</strong>
@@ -240,7 +240,7 @@
           </div>
 
           <div class="portfolio-grid">
-            <article class="project-card reveal-portfolio">
+            <article class="project-card uiverse-card reveal-portfolio" data-animate="portfolio">
               <div class="project-image project-residential" aria-label="Residential painting project image placeholder"></div>
               <div class="project-body">
                 <h3>Residential painting</h3>
@@ -253,7 +253,7 @@
               </div>
             </article>
 
-            <article class="project-card reveal-portfolio">
+            <article class="project-card uiverse-card reveal-portfolio" data-animate="portfolio">
               <div class="project-image project-renovation" aria-label="Renovation project image placeholder"></div>
               <div class="project-body">
                 <h3>Renovation</h3>
@@ -266,7 +266,7 @@
               </div>
             </article>
 
-            <article class="project-card reveal-portfolio">
+            <article class="project-card uiverse-card reveal-portfolio" data-animate="portfolio">
               <div class="project-image project-decorative" aria-label="Decorative finish project image placeholder"></div>
               <div class="project-body">
                 <h3>Decorative finish</h3>
@@ -279,7 +279,7 @@
               </div>
             </article>
 
-            <article class="project-card reveal-portfolio">
+            <article class="project-card uiverse-card reveal-portfolio" data-animate="portfolio">
               <div class="project-image project-commercial" aria-label="Commercial space project image placeholder"></div>
               <div class="project-body">
                 <h3>Commercial space</h3>
@@ -292,7 +292,7 @@
               </div>
             </article>
 
-            <article class="project-card reveal-portfolio">
+            <article class="project-card uiverse-card reveal-portfolio" data-animate="portfolio">
               <div class="project-image project-training" aria-label="Training workshop project image placeholder"></div>
               <div class="project-body">
                 <h3>Training workshop</h3>
@@ -310,7 +310,7 @@
 
       <section class="training section-cream" id="training" aria-labelledby="training-title">
         <div class="container training-grid">
-          <div class="training-copy reveal-card">
+          <div class="training-copy reveal-card" data-animate="card">
             <p class="eyebrow">Training Academy</p>
             <h2 id="training-title">Train to Become a Professional Painter</h2>
             <p>
@@ -319,29 +319,29 @@
               workflow.
             </p>
             <div class="button-row">
-              <a class="button button-primary" href="#training-programs">View Training Programs</a>
-              <a class="button button-light" href="#contact">Apply for Training</a>
+              <a class="button button-primary uiverse-button" href="#training-programs">View Training Programs</a>
+              <a class="button button-light uiverse-button" href="#contact">Apply for Training</a>
             </div>
           </div>
 
           <div class="training-programs" id="training-programs">
-            <article class="training-card reveal-card">
+            <article class="training-card uiverse-card reveal-card" data-animate="card">
               <h3>Beginner Painter Course</h3>
               <p>Tools, setup, clean application, and real jobsite basics.</p>
             </article>
-            <article class="training-card reveal-card">
+            <article class="training-card uiverse-card reveal-card" data-animate="card">
               <h3>Wall Preparation</h3>
               <p>Inspection, patching, sanding, priming, and masking.</p>
             </article>
-            <article class="training-card reveal-card">
+            <article class="training-card uiverse-card reveal-card" data-animate="card">
               <h3>Paint & Material Basics</h3>
               <p>Paint systems, finishes, materials, and room conditions.</p>
             </article>
-            <article class="training-card reveal-card">
+            <article class="training-card uiverse-card reveal-card" data-animate="card">
               <h3>Decorative Finish Training</h3>
               <p>Feature walls, refined finishes, and detail control.</p>
             </article>
-            <article class="training-card reveal-card">
+            <article class="training-card uiverse-card reveal-card" data-animate="card">
               <h3>Business & Client Workflow</h3>
               <p>Consultation, scope planning, quoting, and final handover.</p>
             </article>
@@ -360,19 +360,19 @@
             </p>
           </div>
           <div class="why-grid">
-            <div class="why-card reveal-card">Space scanning before work begins</div>
-            <div class="why-card reveal-card">3D planning and finish preview</div>
-            <div class="why-card reveal-card">Clear quote and timeline</div>
-            <div class="why-card reveal-card">Professional surface preparation</div>
-            <div class="why-card reveal-card">Skilled painters</div>
-            <div class="why-card reveal-card">Training-backed standards</div>
-            <div class="why-card reveal-card">Clean final handover</div>
+            <div class="why-card uiverse-card reveal-card" data-animate="card">Space scanning before work begins</div>
+            <div class="why-card uiverse-card reveal-card" data-animate="card">3D planning and finish preview</div>
+            <div class="why-card uiverse-card reveal-card" data-animate="card">Clear quote and timeline</div>
+            <div class="why-card uiverse-card reveal-card" data-animate="card">Professional surface preparation</div>
+            <div class="why-card uiverse-card reveal-card" data-animate="card">Skilled painters</div>
+            <div class="why-card uiverse-card reveal-card" data-animate="card">Training-backed standards</div>
+            <div class="why-card uiverse-card reveal-card" data-animate="card">Clean final handover</div>
           </div>
         </div>
       </section>
 
       <section class="contact section-dark" id="contact" aria-labelledby="contact-title">
-        <div class="container contact-panel reveal-contact">
+        <div class="container contact-panel uiverse-card reveal-contact" data-animate="contact">
           <div>
             <p class="eyebrow">Contact</p>
             <h2 id="contact-title">Book a Site Visit or Ask About Training</h2>
@@ -423,7 +423,7 @@
               Message
               <textarea name="message" rows="5"></textarea>
             </label>
-            <button class="button button-primary" type="submit">Submit Request</button>
+            <button class="button button-primary uiverse-button" type="submit">Submit Request</button>
             <p class="form-status" aria-live="polite"></p>
           </form>
         </div>
