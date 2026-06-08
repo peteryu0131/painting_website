@@ -3,7 +3,6 @@ const siteNav = document.querySelector("[data-nav]");
 const bookingForm = document.querySelector(".booking-form");
 const scrollProgress = document.querySelector("[data-scroll-progress]");
 const floatingConsultation = document.querySelector("[data-floating-consultation]");
-const selectionNote = document.querySelector("[data-selection-note]");
 const navLinks = Array.from(document.querySelectorAll(".site-nav a[href^='#']"));
 const sectionTargets = navLinks
   .map((link) => {
@@ -13,17 +12,6 @@ const sectionTargets = navLinks
   .filter((item) => item.section)
   .sort((a, b) => a.section.offsetTop - b.section.offsetTop);
 const serviceCards = document.querySelectorAll("[data-project-type]");
-const defaultSelectionNote = "Select a service card to prefill your consultation request.";
-
-const updateSelectedProjectNote = (projectType) => {
-  if (!selectionNote) {
-    return;
-  }
-
-  selectionNote.textContent = projectType
-    ? `Selected service: ${projectType}. The form is ready for your consultation notes.`
-    : defaultSelectionNote;
-};
 
 if (navToggle && siteNav) {
   navToggle.addEventListener("click", () => {
@@ -58,9 +46,8 @@ if (bookingForm) {
     }
 
     bookingForm.reset();
-    updateSelectedProjectNote("");
     if (status) {
-      status.textContent = "Consultation request noted. Connect this form to your studio email or CRM when ready.";
+      status.textContent = "Free quote request noted. Connect this form to your email or CRM when ready.";
     }
   });
 }
@@ -122,21 +109,10 @@ window.addEventListener("resize", queueScrollExperienceUpdate);
 queueScrollExperienceUpdate();
 
 if (bookingForm && serviceCards.length) {
-  const projectTypeSelect = bookingForm.querySelector("select[name='interest']");
   const messageField = bookingForm.querySelector("textarea[name='message']");
   const contactSection = document.getElementById("contact");
 
-  projectTypeSelect?.addEventListener("change", () => {
-    updateSelectedProjectNote(projectTypeSelect.value);
-  });
-  updateSelectedProjectNote(projectTypeSelect?.value || "");
-
-  const startProjectInquiry = (projectType) => {
-    if (projectTypeSelect) {
-      projectTypeSelect.value = projectType;
-      projectTypeSelect.dispatchEvent(new Event("change", { bubbles: true }));
-    }
-
+  const startProjectInquiry = () => {
     contactSection?.scrollIntoView({ behavior: "smooth", block: "start" });
 
     window.setTimeout(() => {
@@ -146,7 +122,7 @@ if (bookingForm && serviceCards.length) {
 
   serviceCards.forEach((card) => {
     card.addEventListener("click", () => {
-      startProjectInquiry(card.dataset.projectType);
+      startProjectInquiry();
     });
 
     card.addEventListener("keydown", (event) => {
@@ -155,7 +131,7 @@ if (bookingForm && serviceCards.length) {
       }
 
       event.preventDefault();
-      startProjectInquiry(card.dataset.projectType);
+      startProjectInquiry();
     });
   });
 }
@@ -230,7 +206,7 @@ window.addEventListener("load", () => {
     batchReveal("[data-animate='portfolio']", { y: 0, batchMax: 3 });
     batchReveal("[data-animate='contact']", { y: 30, batchMax: 1 });
 
-    gsap.utils.toArray(".process-visual, .project-image").forEach((element) => {
+    gsap.utils.toArray(".process-visual").forEach((element) => {
       gsap.from(element, {
         clipPath: "inset(0% 100% 0% 0%)",
         duration: 0.9,
