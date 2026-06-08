@@ -126,7 +126,9 @@ test("site uses the transparent crest logo asset", async () => {
   assert.match(html, /<img src="assets\/logo-crest\.png" width="746" height="991" alt="" \/>/);
   assert.doesNotMatch(html, /src="logo\.png"/);
   assert.doesNotMatch(html, /brand-crown|brand-initial/);
-  assert.match(css, /\.brand-mark\s*\{[^}]*width:\s*38px;[^}]*height:\s*38px;[^}]*overflow:\s*hidden;[^}]*transform:\s*translateY\(-4px\);/s);
+  assert.match(css, /\.brand-mark\s*\{[^}]*width:\s*44px;[^}]*height:\s*58px;[^}]*overflow:\s*visible;/s);
+  assert.doesNotMatch(css, /\.brand-mark\s*\{[^}]*transform:\s*translateY\(-/s);
+  assert.match(css, /@media \(max-width:\s*760px\)[\s\S]*\.brand-mark\s*\{[^}]*width:\s*38px;[^}]*height:\s*50px;/s);
   assert.match(css, /\.brand-mark img\s*\{[^}]*object-fit:\s*contain;/s);
 });
 
